@@ -1,13 +1,14 @@
+const { PORT } = require("./config")
+const routes = require('./routes')
+
 const express = require('express');
 const app = express();
 
-const port = process.env.PORT || 8000;
 
+// Routes
+app.use("/", routes.base)
 
-app.get('/',(req,res)=>{
-    res.send("hello");
-})
-
-app.listen(()=>{
-    console.log(`backend run on ${port} port`);
+// Server Run
+app.listen(() => {
+    console.log(`backend running on ${PORT} port`);
 })
