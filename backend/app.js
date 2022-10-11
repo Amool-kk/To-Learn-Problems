@@ -7,7 +7,9 @@ const app = express();
 
 
 // Routes
-app.use("/", routes.base)
+app.use(express.json());
+app.use(express.urlencoded({extended:true}))
+app.use(routes.base)
 
   // Server Run
   ; (async () => {
