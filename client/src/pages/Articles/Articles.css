@@ -27,23 +27,28 @@ body {
 }
 .cards {    
     display: grid;
+    margin:20px auto;
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
     pointer-events: none;
+
 }
-  
+@media screen and (min-width: 992px) {
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* align-items: start; */
+  }
+}  
 .card {
   max-width: 15rem;
   color: #ffffffda;
   padding: 1.5rem;
   background-color: #112240;
-  
   pointer-events: auto;
-  
   transform: scale(1);
   opacity: 1;
   transition: all 150ms ease-in-out; 
-  
   display: flex;
   flex-direction: column;
 }
@@ -62,11 +67,9 @@ body {
   font-size: 0.9rem;
 }
     
-   
-
 .cards:hover > .card:hover {
   transform: scale(1.15);
-  color:#64ffda;
+  color:#64ffda !important;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   cursor:pointer;
   z-index: 1;

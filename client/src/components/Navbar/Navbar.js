@@ -1,6 +1,7 @@
 import React from "react";
-import "./Navbar.css";
 import { Link } from "react-router-dom";
+import Buttons from "../../Contexts/Buttons";
+import "./Navbar.css";
 
 const Navbar = () => {
   return (
@@ -9,7 +10,9 @@ const Navbar = () => {
       <div className="links">
         <Link to="/">Home</Link>
         <Link to="/articles">Articles</Link>
-        <button className="mode">Dark Mode</button>
+        <button className="mode">
+          <Buttons />
+        </button>
       </div>
     </div>
   );
