@@ -2,6 +2,7 @@ const { DB_URI } = require('../config')
 const { Admin } = require('../models')
 const mongo = require('./mongo')
 const inquirer = require('inquirer')
+const mailer = require('./mailer')
 
     ; (async () => {
         await mongo.connectDB(DB_URI)
@@ -10,9 +11,9 @@ const inquirer = require('inquirer')
 
         let user = await prompt([
             {
-                name: 'username',
+                name: 'email',
                 type: 'input',
-                message: 'Username: '
+                message: 'Email: '
             },
             {
                 name: 'password',
@@ -25,9 +26,10 @@ const inquirer = require('inquirer')
 
         let adminUser = new Admin(user)
 
-        adminUser.save((err) => {
+        adminUser.save(async (err) => {
             if (err) throw err
-            console.log(`Admin ${user.username} created successfuly`)
+            console.log(`Admin with email ${user.email} created successfuly`)
+            await mailer.sendMail(user.email, 'Welcome to Codefox', 'You have been added as an admin')
             process.exit(0)
 
         })
