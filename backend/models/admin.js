@@ -5,9 +5,9 @@ const Schema = mongoose.Schema
 SALT_WORK_FACTOR = 10
 
 const AdminSchema = new Schema({
-    username: {
+    email: {
         type: String,
-        required: [true, '*Username is required'],
+        required: [true, '*Email is required'],
         unique: true
     },
     password: {
