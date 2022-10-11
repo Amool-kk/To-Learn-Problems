@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap');
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,*::before,*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  height: 100vh;
+  background-color: #151515;
+  font-family: 'Source Code Pro', monospace;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  padding: 1rem 0;
+  display: grid;
+  place-content: center;
+}
+.cards {    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    pointer-events: none;
+}
+  
+.card {
+  max-width: 15rem;
+  color: #ffffffda;
+  padding: 1.5rem;
+  background-color: #112240;
+  
+  pointer-events: auto;
+  
+  transform: scale(1);
+  opacity: 1;
+  transition: all 150ms ease-in-out; 
+  
+  display: flex;
+  flex-direction: column;
+}
+.card-title {
+  position: relative;
+}  
+  
+
+.date {
+  color: #bb86fc;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  font-size: 0.9rem;
+}
+    
+   
+
+.cards:hover > .card:hover {
+  transform: scale(1.15);
+  color:#64ffda;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  cursor:pointer;
+  z-index: 1;
+}
+.cards:hover > .card:not(:hover) {
+  opacity: 0.5;
+}
