@@ -17,11 +17,11 @@ form{
     flex-direction: column;
     margin: auto;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
     text-align: center;
-    padding: 90px 70px;
+    padding: 70px 70px;
     background-color: #112240;
-    margin: 60px auto;
+    margin: 30px auto;
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 
@@ -30,7 +30,7 @@ form{
 
 .forms label{
     display: block;
-    margin: 10px;
+    margin: 7px;
     text-align: left;
     font-size: 20px;
     color: #bb86fc;
