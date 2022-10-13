@@ -13,13 +13,12 @@ html {
 
 
 body {
-  height: 100vh;
   background-color: #151515;
   font-family: 'Source Code Pro', monospace;
 }
 
 .container {
-  height: 100%;
+  min-height: 80vh;
   width: 100%;
   padding: 1rem 0;
   display: grid;
