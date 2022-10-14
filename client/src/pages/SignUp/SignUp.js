@@ -59,7 +59,7 @@ const SignUp = () => {
                         <input type="password" name="cpassword" autoComplete="off" value={cpass} 
                         onChange={(e)=>setCpass(e.target.value)} />
                    </div>
-                   <button type="submit">Login</button>
+                   <button type="submit">Register</button>
                </form>
                <p>Already have an account ? <Link to ="/login">  Login here</Link></p>
                <ToastContainer />
