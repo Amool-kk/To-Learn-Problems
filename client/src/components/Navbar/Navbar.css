@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,300;0,400;1,300&display=swap');
 
 .navbar{
+  width: 100%;
     background:#24283b;
     display:flex;
     align-items: center;
@@ -40,3 +41,4 @@
     z-index: 1;
   }
  
+

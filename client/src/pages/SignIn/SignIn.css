@@ -63,8 +63,9 @@ form{
 }
 
 .forms p a{
+    color: aqua;
     text-decoration: none;
 }
 .forms p a:hover{
-    color: aqua;
+    color: #bb86fc;
 }
