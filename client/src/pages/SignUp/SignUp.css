@@ -21,9 +21,10 @@ form{
     text-align: center;
     padding: 70px 70px;
     background-color: #112240;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
     margin: 30px auto;
     border-radius: 30px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    
 
 }
 
