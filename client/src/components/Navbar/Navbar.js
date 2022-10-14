@@ -9,6 +9,8 @@ const Navbar = () => {
       <h1>CodeFoxes</h1>
       <div className="links">
         <Link to="/">Home</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/register">Register</Link>
         <Link to="/articles">Articles</Link>
         <button className="mode">
           <Buttons />

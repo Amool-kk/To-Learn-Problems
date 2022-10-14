@@ -1,0 +1,70 @@
+.container
+{
+    min-height: 80vh;  
+}
+
+h2{
+    color: aqua;
+    width: auto;
+    margin: auto;
+
+}
+form{
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: center;
+    padding: 90px 70px;
+    background-color: #112240;
+    margin: 60px auto;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+}
+
+
+.forms label{
+    display: block;
+    margin: 10px;
+    text-align: left;
+    font-size: 20px;
+    color: #bb86fc;
+}
+
+.forms input{
+    padding: 10px;
+    outline: none;
+    border-radius: 30px;
+    background-color: #223f72;
+    border: none;
+    color: white;
+}
+.forms input:active{
+    background: #223f72;
+} 
+
+.forms button{
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    background-color: aqua;
+    color: black;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.forms p{
+    color: rgb(158, 152, 152);
+}
+
+.forms p a{
+    text-decoration: none;
+}
+.forms p a:hover{
+    color: aqua;
+}
