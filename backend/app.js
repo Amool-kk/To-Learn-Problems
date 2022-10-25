@@ -21,3 +21,5 @@ app.use('/tag',routes.tag)
     })
 
   })()
+
+module.exports = app
