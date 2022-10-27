@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { useContext, useState } from "react";
 import "./QuestionForm.css";
+import TagInput from "../TagInput/TagInput";
 
 const QuestionForm = () => {
   const [title, setTitle] = useState("");
@@ -50,9 +51,6 @@ const QuestionForm = () => {
       toast.error("Fields can't be empty");
     }
   };
-
-  //add tags
-  const addTags = () => {};
   return (
     <form className="create" onSubmit={handleSubmit}>
       <h2>Add a problem</h2>
@@ -93,12 +91,7 @@ const QuestionForm = () => {
         className="hint"
       />
       <label>Tags</label>
-      <input
-        type="text"
-        onKeyUp={addTags}
-        value={tags}
-        className="question-tags"
-      />
+      <TagInput />
       <button type="submit">Add problem</button>
       <ToastContainer />
     </form>

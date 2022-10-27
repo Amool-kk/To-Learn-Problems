@@ -41,6 +41,10 @@ form {
   background-color: #223f72;
   border: none;
   color: white;
+
+  display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap;
 }
 .create select {
   width: 80%;
@@ -67,3 +71,5 @@ form {
   font-family: JetBrains Mono Regular;
   margin-right: auto;
 }
+
+
