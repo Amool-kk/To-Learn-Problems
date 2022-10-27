@@ -1,31 +1,31 @@
-.container {
-  min-height: 80vh;
-  transition: all 0.3s linear;
-}
-
 h2 {
-  color: aqua;
+  color: #64ffda;
   width: auto;
   margin: auto;
+  font-weight: normal;
+  padding-bottom: 20px;
 }
 form {
-  max-width: 400px;
+  min-width: 50%;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   margin: auto;
   flex-wrap: wrap;
-  gap: 15px;
-  text-align: center;
-  padding: 70px 80px;
+  gap: 25px;
+  text-align: left;
+  padding: 60px 80px;
   background-color: #112240;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  margin: 30px auto;
+  margin: 10px auto;
   border-radius: 30px;
+  transition: all 0.3s linear;
+  margin-top: 5vh;
+  margin-bottom: 10vh;
 }
 
-.forms label {
+.create label {
   display: block;
   margin: 7px;
   text-align: left;
@@ -33,21 +33,30 @@ form {
   color: #bb86fc;
 }
 
-.forms input {
-  padding: 15px;
+.create input {
+  width: 80%;
+  padding: 20px;
   outline: none;
   border-radius: 30px;
   background-color: #223f72;
   border: none;
   color: white;
 }
-
-.forms input:focus {
+.create select {
+  width: 80%;
+  padding: 20px;
+  outline: none;
+  border-radius: 30px;
+  background-color: #223f72;
+  border: none;
+  color: white;
+}
+.create input:focus {
   background: #223f72;
   border: 2px solid #4299e1;
 }
 
-.forms button {
+.create button {
   padding: 10px;
   border-radius: 20px;
   margin-top: 10px;
@@ -56,21 +65,5 @@ form {
   border: 2px solid #64ffda;
   font-size: 20px;
   font-family: JetBrains Mono Regular;
-  margin: auto;
-}
-
-.forms p {
-  color: rgb(158, 152, 152);
-}
-
-.forms p a {
-  color: aqua;
-  text-decoration: none;
-}
-.forms p a:hover {
-  color: #bb86fc;
-  /* color: aqua; */
-}
-.input {
-  padding: 0 10px;
+  margin-right: auto;
 }

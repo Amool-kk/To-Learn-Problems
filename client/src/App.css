@@ -1,22 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,100;1,300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,100;1,300&display=swap");
 body {
   margin: 0;
-  padding:0;
-  font-family:"JetBrains Mono";
+  padding: 0;
+  font-family: "JetBrains Mono";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background:  #0a192f;
-  color:transparent;
+  background: #0a192f;
+  color: transparent;
 }
 body::-webkit-scrollbar {
   width: 10px;
 }
 
 body::-webkit-scrollbar-track {
-  background-color:#0a192f ;
+  background-color: #0a192f;
 }
 
 body::-webkit-scrollbar-thumb {
- background-color:#24283b;
- 
+  background-color: #24283b;
+}
+
+.Toastify__toast--success {
+  color: #1aac83;
+}
+.Toastify__toast--warning {
+  background: #ffe8bc !important;
+}
+.Toastify__toast--error {
+  background: gainsboro !important;
+}
+.toastBody {
+  font-family: "Atlas Grotesk Web", Arial, Helvetica, sans-serif;
+  color: #10171d; /* #10171D */
+  font-size: 0.875rem !important;
+}
+.toastProgress {
+  background: #333f48 !important;
+}
+
+.Toastify__toast > button {
+  border: none;
+  color: #8a0707;
+  background: #d5d6db;
 }
