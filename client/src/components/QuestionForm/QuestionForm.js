@@ -1,19 +1,42 @@
 import { ToastContainer, toast } from "react-toastify";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
-import { useContext, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import "./QuestionForm.css";
 import ToggleTag from "../ToggleTag/ToggleTag";
 
 const QuestionForm = () => {
+  const navigate = useNavigate()
   const [title, setTitle] = useState("");
   const [questionLink, setQuestionLink] = useState("");
   const [answerLink, setAnswerLink] = useState("");
   const [tags, setTags] = useState([]);
   const [level, setLevel] = useState("");
   const [hint, setHint] = useState("");
+  const [types, setTypes] = useState(["array"]);
 
   const [entry, setEntry] = useState("");
+
+  useEffect(() => {
+    fetchTags()
+  }, [])
+
+  const fetchTags = useCallback(async () => {
+    const res = await fetch('/tags', {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    const json = await res.json();
+    console.log(json)
+
+    if (res.status === 200) {
+      setTypes(json);
+    } else {
+      setTypes([]);
+    }
+  }, [setTypes])
 
   const addTags = (type) => {
     setTags([type, ...tags]);
@@ -22,6 +45,8 @@ const QuestionForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    console.log(title, tags, questionLink, answerLink, hint, level)
     if (title && questionLink && answerLink && hint && tags && level) {
       const newQuestion = {
         title,
@@ -41,16 +66,19 @@ const QuestionForm = () => {
       });
       const json = await response.json();
       console.log(json);
-      setEntry([...entry, newQuestion]);
-      toast.success("Problem added successfully...", {
-        position: "top-center",
-      });
-      setTitle("");
-      setQuestionLink("");
-      setAnswerLink("");
-      setTags([]);
-      setLevel("");
-      setHint("");
+      if (response.status === 200) {
+        setEntry([...entry, newQuestion]);
+        toast.success("Problem added successfully...", {
+          position: "top-center",
+        });
+        setTitle("");
+        setQuestionLink("");
+        setAnswerLink("");
+        setTags([]);
+        setLevel("");
+        setHint("");
+        navigate('/problems');
+      }
     } else {
       toast.error("Fields can't be empty");
     }
@@ -100,16 +128,15 @@ const QuestionForm = () => {
         {types.map((type, index) => {
           return (
             <ToggleTag
-              tag={type}
+              tag={type.tag}
               key={index}
               onClick={() => {
-                addTags(type);
+                addTags(type._id);
               }}
             />
           );
         })}
       </div>
-
       <button type="submit">Add problem</button>
       <ToastContainer />
     </form>
