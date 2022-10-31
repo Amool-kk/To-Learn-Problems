@@ -1,4 +1,5 @@
 const { Router } = require("express");
+const { authenticate } = require("../middlewares");
 const routes = Router();
 const { Question, Tag } = require("../models");
 
@@ -15,7 +16,7 @@ routes.get("/", async (req, res) => {
 });
 
 //add a question
-routes.post("/", async (req, res) => {
+routes.post("/", authenticate, async (req, res) => {
   const { title, tags, questionLink, answerLink, hint, level } = req.body;
 
   const data = new Question({

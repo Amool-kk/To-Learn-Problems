@@ -1,5 +1,6 @@
 const { Router } = require("express");
 const { default: mongoose } = require("mongoose");
+const { authenticate } = require("../middlewares");
 const routes = Router();
 const { Tag } = require("../models");
 
@@ -16,7 +17,7 @@ routes.get("/", async (req, res) => {
 });
 
 //create a tag
-routes.post("/", async (req, res) => {
+routes.post("/", authenticate, async (req, res) => {
   const { tag, questions } = req.body;
 
   const data = new Tag({
