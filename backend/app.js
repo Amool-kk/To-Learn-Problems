@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(routes.base);
-app.use("/tag", routes.tag);
+app.use("/tags", routes.tag);
 app.use("/questions", routes.question);
 
 //connecting to the database

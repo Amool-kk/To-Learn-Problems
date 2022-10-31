@@ -63,7 +63,7 @@
   padding-bottom: calc(4rem + (6 - 4) * ((100vw - 20rem) / (100 - 20)));
   padding-left: 5rem;
 }
-.sec1 .inner .sec2-c2 .hi {
+.sec1 .inner .sec2-c2 .hi .codefoxes {
   transform: rotate(-5deg);
   transform-origin: bottom left;
   font-size: 1.8rem;

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { useContext, useState } from "react";
 import "./QuestionForm.css";
-import TagInput from "../TagInput/TagInput";
+import ToggleTag from "../ToggleTag/ToggleTag";
 
 const QuestionForm = () => {
   const [title, setTitle] = useState("");
@@ -15,19 +15,23 @@ const QuestionForm = () => {
 
   const [entry, setEntry] = useState("");
 
+  const addTags = (type) => {
+    setTags([type, ...tags]);
+  };
+  // console.log(tags);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     if (title && questionLink && answerLink && hint && tags && level) {
       const newQuestion = {
         title,
+        tags,
         questionLink,
         answerLink,
         hint,
-        tags,
         level,
       };
-
+      console.log(tags);
       const response = await fetch("/questions", {
         method: "POST",
         body: JSON.stringify(newQuestion),
@@ -51,6 +55,7 @@ const QuestionForm = () => {
       toast.error("Fields can't be empty");
     }
   };
+
   return (
     <form className="create" onSubmit={handleSubmit}>
       <h2>Add a problem</h2>
@@ -91,7 +96,20 @@ const QuestionForm = () => {
         className="hint"
       />
       <label>Tags</label>
-      <TagInput />
+      <div className="types-container">
+        {types.map((type, index) => {
+          return (
+            <ToggleTag
+              tag={type}
+              key={index}
+              onClick={() => {
+                addTags(type);
+              }}
+            />
+          );
+        })}
+      </div>
+
       <button type="submit">Add problem</button>
       <ToastContainer />
     </form>

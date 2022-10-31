@@ -4,7 +4,7 @@ const { Question, Tag } = require("../models");
 
 //get all questions
 routes.get("/", async (req, res) => {
-  const data = await Question.find({});
+  const data = await Question.find({}).populate("tags", "tag");
 
   if (data) {
     console.log(data);
@@ -16,11 +16,11 @@ routes.get("/", async (req, res) => {
 
 //add a question
 routes.post("/", async (req, res) => {
-  const { title, tag, questionLink, answerLink, hint, level } = req.body;
+  const { title, tags, questionLink, answerLink, hint, level } = req.body;
 
   const data = new Question({
     title,
-    tag,
+    tags,
     questionLink,
     answerLink,
     hint,
@@ -36,10 +36,17 @@ routes.post("/", async (req, res) => {
     res.status(500).json({ message: "Some error try again" });
   }
 });
+
 //delete questions
 routes.delete("/", async (req, res) => {
   const response = await Question.deleteMany({});
-  console.log(response);
+  if (response) {
+    res.status(200).json(response);
+  } else {
+    res
+      .status(500)
+      .json({ message: "Failed to delete files please try again" });
+  }
 });
 
 module.exports = routes;

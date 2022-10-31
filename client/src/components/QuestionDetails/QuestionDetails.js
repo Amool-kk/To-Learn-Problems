@@ -32,10 +32,10 @@ const QuestionDetails = ({ questions }) => {
                 </div>
 
                 <div className="buttons">
-                  {question.tag.map((item, index) => {
+                  {question.tags.map((item, index) => {
                     return (
                       <button key={index} className="btn">
-                        <h4>{item}</h4>
+                        <h4>{item.tag}</h4>
                       </button>
                     );
                   })}

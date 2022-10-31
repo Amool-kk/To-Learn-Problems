@@ -41,7 +41,6 @@ form {
   background-color: #223f72;
   border: none;
   color: white;
-
   display: flex;
 	align-items: flex-start;
 	flex-wrap: wrap;
@@ -72,4 +71,9 @@ form {
   margin-right: auto;
 }
 
-
+.create .types-container{
+  display:flex;
+  flex-wrap: wrap;
+  
+  
+}

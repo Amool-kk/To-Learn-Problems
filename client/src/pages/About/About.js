@@ -12,7 +12,7 @@ const About = () => {
         <div className="sec2-c2">
           <p className="hi">
             {" "}
-            <span>CodeFoxes</span>{" "}
+            <span className="codefoxes">CodeFoxes</span>{" "}
           </p>
           <h1 className="me">
             Learn the ways <br /> of Competitive Programming. <br />
