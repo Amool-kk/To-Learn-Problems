@@ -1,23 +1,25 @@
-ul{
-    width:100%;
-    margin:auto;
-    padding:20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
+ul {
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
-li{
-    font-size: 1.5rem;
-    list-style: none;
+li {
+  font-size: 1.5rem;
+  list-style: none;
 }
 
-li a{
-    text-decoration: none;
-    color: white;
+li a {
+  text-decoration: none;
+  color: white;
 }
 
-li a:hover{
-    color: aqua;
+.footer li a:hover {
+  color: #bb86fc;
+  cursor: pointer;
+  z-index: 1;
 }

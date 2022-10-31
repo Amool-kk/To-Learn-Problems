@@ -1,93 +1,93 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-.sec1{
-    min-height: 92vh;
-    background-color:#0a192f ;
-    /* background-color: #29272A; */
-    position: relative;
-    overflow: hidden;
-    color: #ffffff;
-    z-index: 1;
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+.sec1 {
+  min-height: 92vh;
+  background-color: #0a192f;
+  /* background-color: #29272A; */
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+  z-index: 1;
 }
 
-.sec1 .inner{
-    min-height: 92vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 100;
-    padding-left: calc(1rem + (8 - 1) * ((100vw - 20rem)/ (100 - 20)));
-    padding-right: calc(1rem + (8 - 1) * ((100vw - 20rem)/ (100 - 20)));
+.sec1 .inner {
+  min-height: 92vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding-left: calc(1rem + (8 - 1) * ((100vw - 20rem) / (100 - 20)));
+  padding-right: calc(1rem + (8 - 1) * ((100vw - 20rem) / (100 - 20)));
 }
-.sec1 .inner .sec1-c1{
-    width: 50%;  
-    position: relative;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.sec1 .inner .sec1-c1 {
+  width: 50%;
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.sec1 .inner .sec1-c1 .box{
-    width: 50%;
-    height: 50%;
-    width:350px;
-    height: 450px;
-    /* background-color: #9C84BF; */
-    /* background-color: #4C3A69; */
-    background-color: #1c3053;
-   
-    position: relative;
-    border-radius: 10%;
-    box-shadow: #29272a 0 2px 200px;
-    display: flex;
-    align-items: center;
-    -webkit-box-pack: center;
-    -webkit-box-align: center;
+.sec1 .inner .sec1-c1 .box {
+  width: 50%;
+  height: 50%;
+  width: 350px;
+  height: 450px;
+  /* background-color: #9C84BF; */
+  /* background-color: #4C3A69; */
+  background-color: #1c3053;
+
+  position: relative;
+  border-radius: 10%;
+  box-shadow: #29272a 0 2px 200px;
+  display: flex;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
 }
-.sec1 .inner .sec1-c1 .box img{
-    width:300px;
-    height: 350px;
-    object-fit: contain;
-    position: relative;
-    z-index: 1000;
-    border-radius: 50px;
-    margin-left: 40%;
-    /* display: block; */
-    box-shadow: #252425 0 2px 100px;
+.sec1 .inner .sec1-c1 .box img {
+  max-width: 250px;
+  height: 300px;
+  object-fit: contain;
+  position: relative;
+  z-index: 1000;
+  border-radius: 50px;
+  margin-left: 40%;
+  /* display: block; */
+  box-shadow: #252425 0 2px 100px;
+  background: transparent;
 }
-.sec1 .inner .sec2-c2{
-    width: 50%;
-    
-    padding-top: calc(4rem + (6 - 4) * ((100vw - 20rem)/ (100 - 20)));
-    padding-bottom: calc(4rem + (6 - 4) * ((100vw - 20rem)/ (100 - 20)));
-    padding-left: 5rem;
-   
+.sec1 .inner .sec2-c2 {
+  width: 50%;
+
+  padding-top: calc(4rem + (6 - 4) * ((100vw - 20rem) / (100 - 20)));
+  padding-bottom: calc(4rem + (6 - 4) * ((100vw - 20rem) / (100 - 20)));
+  padding-left: 5rem;
 }
-.sec1 .inner .sec2-c2 .hi{
-    transform: rotate(-5deg);
-    transform-origin: bottom left;
-    font-size: 1.8rem;
-    line-height: 1.5rem;
-    margin-bottom: 1rem;
-    position: relative;
-    font-family: 'Dancing Script', cursive;
-    font-weight: 900;
+.sec1 .inner .sec2-c2 .hi .codefoxes {
+  transform: rotate(-5deg);
+  transform-origin: bottom left;
+  font-size: 1.8rem;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  font-family: "Dancing Script", cursive;
+  font-weight: 900;
 }
-.sec1 .inner .sec2-c2 .me{
-    font-size: 3rem;
-    z-index: 1;
+.sec1 .inner .sec2-c2 .me {
+  font-size: 3rem;
+  z-index: 1;
 }
 
-.sec1:after{
-    content: "";
-    background:#24283b;
-    /* background-color: #774069; */
-    position: absolute;
-    min-height: 100vh;
-    width: 65%;
-    right: 0px;
-    top: 0px;
-    bottom: 0px;
-    max-width: 1800px;
-    z-index: 0;
+.sec1:after {
+  content: "";
+  background: #24283b;
+  /* background-color: #774069; */
+  position: absolute;
+  min-height: 100vh;
+  width: 65%;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  max-width: 1800px;
+  z-index: 0;
 }

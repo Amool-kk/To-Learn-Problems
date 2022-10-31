@@ -1,20 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap");
 
 html {
   box-sizing: border-box;
   font-size: 100%;
 }
 
-*,*::before,*::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
 }
 
-
 body {
   background-color: #151515;
-  font-family: 'Source Code Pro', monospace;
+  font-family: "Source Code Pro", monospace;
 }
 
 .container {
@@ -24,42 +25,42 @@ body {
   display: grid;
   place-content: center;
 }
-.cards {    
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-    pointer-events: none;
+.tags {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  pointer-events: none;
 }
-  
-.card {
+
+.tag {
   max-width: 15rem;
   color: #ffffffda;
-  padding: 1.5rem;
+  padding: 15px 25px;
   background-color: #112240;
   pointer-events: auto;
   transform: scale(1);
   opacity: 1;
-  transition: all 150ms ease-in-out; 
-  border-radius:10px;
+  transition: all 150ms ease-in-out;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
-.card-title {
+.tag-title {
   position: relative;
-}  
-  
+}
 
 .description {
   font-size: 0.9rem;
 }
 
- .cards:hover > .card:hover {
+.tag:hover {
   transform: scale(1.15);
-  color:#bb86fc !important;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  cursor:pointer;
+  color: #bb86fc !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
   z-index: 1;
 }
-.cards:hover > .card:not(:hover) {
+.tags:hover > .tag:not(:hover) {
   opacity: 0.5;
 }

@@ -1,35 +1,58 @@
-
-const { Router } = require('express')
+const { Router } = require("express");
+const { default: mongoose } = require("mongoose");
 const routes = Router();
-const { Tag } = require('../models')
+const { Tag } = require("../models");
 
-routes.get('/', async (req, res) => {
-    const data = await Tag.find({});
+//get all tags
+routes.get("/", async (req, res) => {
+  const data = await Tag.find({}).populate("questions");
 
+  if (data) {
+    console.log(data);
+    res.status(200).json(data);
+  } else {
+    res.status(500).json({ message: "Try again" });
+  }
+});
 
-    if (data) {
-        console.log(data)
-        res.status(200).json({ message: data })
-    } else {
-        res.status(500).json({ message: "try again" })
-    }
-})
+//create a tag
+routes.post("/", async (req, res) => {
+  const { tag, questions } = req.body;
 
-routes.post('/', async (req, res) => {
-    const { tagname } = req.body;
+  const data = new Tag({
+    tag,
+    questions,
+  });
 
-    const data = new Tag({
-        tagname,
-    })
+  const result = await data.save();
 
-    const result = await data.save();
+  if (result) {
+    console.log(result);
+    res.status(200).json(result);
+  } else {
+    res.status(500).json({ message: "Some error try again" });
+  }
+});
 
-    if (result) {
-        console.log(result);
-        res.status(200).json({ message: result });
-    } else {
-        res.status(500).json({ message: "Some error try again" })
-    }
-})
+//update a tag
+routes.patch("/:id", async (req, res) => {
+  const { id } = req.params;
 
-module.exports= routes
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    res.status(400).json({ message: "No such tag exists" });
+  }
+  const tag = await Tag.findOneAndUpdate({ _id: id }, { ...req.body });
+
+  if (!tag) {
+    return res.status(400).json({ message: "No such tag exists" });
+  }
+
+  res.status(200).json(tag);
+});
+
+module.exports = routes;
+
+// {
+
+//   "questions":"635e64fceb84b4518e72a886"
+// }

@@ -1,21 +1,51 @@
-import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import Buttons from "../../Contexts/Buttons";
+import { BiRightArrow, BiDownArrow } from "react-icons/bi";
+import { AuthContext } from "../../contexts/AuthContext";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+  const handleClick = () => {
+    setOpen(!open);
+  };
   return (
-    <div className="navbar">
+    <div className="navigation">
       <h1>CodeFoxes</h1>
-      <div className="links">
-        <Link to="/">Home</Link>
-        <Link to="/login">Login</Link>
-        <Link to="/register">Register</Link>
-        <Link to="/articles">Articles</Link>
-        <Link to="/about">About</Link>
-        <button className="mode">
-          <Buttons />
-        </button>
+      <div
+        className={open ? "hamburger expanded" : "hamburger"}
+        onClick={handleClick}
+      >
+        <BiDownArrow />
+      </div>
+      <div className={open ? "navigation-menu open" : "navigation-menu"}>
+        <ul>
+          <li>
+            <Link to="/" onClick={handleClick}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/login" onClick={handleClick}>
+              Login
+            </Link>
+          </li>
+          <li>
+            <Link to="/articles" onClick={handleClick}>
+              Articles
+            </Link>
+          </li>
+          <li>
+            <Link to="/problems" onClick={handleClick}>
+              Problems
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" onClick={handleClick}>
+              About
+            </Link>
+          </li>
+        </ul>
       </div>
     </div>
   );

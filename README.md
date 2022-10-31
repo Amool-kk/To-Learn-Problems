@@ -1,10 +1,11 @@
-# To-Learn-Problems
-To-Learn-Problems will provide a lots of problems on various topics for person to get mastery in that topic. Problems will be of all levels and categories.
+# Codefoxes
+
+Codefoxes will provide a lots of problems on various topics for person to get mastery in that topic. Problems will be of all levels and categories.
 
 ## Guidelines
 
 - Add new features in this project.
-- Dockeries this project.
+- Dockerise this project.
 - Find bugs and solve them.
 
 ## Getting Started
@@ -22,6 +23,7 @@ git add .
 git commit -m 'About your contribution'
 git push
 ```
+
 - Create a new pull request from your forked repository
 - Your PR gets merged!
 - Now you can also help others do the same.

@@ -1,25 +1,30 @@
-const { PORT, DB_URI } = require("./config")
-const routes = require('./routes')
-const { mongo } = require("./utils")
+const { PORT, DB_URI } = require("./config");
+const routes = require("./routes");
 
-const express = require('express');
+const express = require("express");
+const { connectDB } = require("./utils/mongo");
 const app = express();
-
 
 // Routes
 app.use(express.json());
-app.use(express.urlencoded({extended:true}))
-app.use(routes.base)
-app.use('/tag',routes.tag)
+app.use(express.urlencoded({ extended: true }));
+app.use(routes.base);
+app.use("/tags", routes.tag);
+app.use("/questions", routes.question);
 
-  // Server Run
-  ; (async () => {
-    await mongo.connectDB(DB_URI)
+//connecting to the database
+port = process.env.PORT || 8000;
+const start = async () => {
+  try {
+    await connectDB(process.env.DB_URI);
+    app.listen(port, () => {
+      console.log(`Server is listening on port ${port}`);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-    app.listen(PORT, () => {
-      console.log(`backend running on ${PORT} port`);
-    })
+start();
 
-  })()
-
-module.exports = app
+module.exports = app;

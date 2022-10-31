@@ -13,19 +13,16 @@ html {
   padding: 0;
 }
 
-body {
-  background-color: #151515;
-  font-family: "Source Code Pro", monospace;
-}
-
-.container {
+.question-container {
   min-height: 80vh;
   width: 100%;
   padding: 1rem 0;
   display: grid;
   place-content: center;
+  font-family: JetBrains Mono;
+  transition: all 0.3s linear;
 }
-.cards {
+.question-cards {
   display: grid;
   margin: 20px auto;
   grid-template-columns: repeat(2, 1fr);
@@ -33,13 +30,13 @@ body {
   pointer-events: none;
 }
 @media screen and (min-width: 992px) {
-  .cards {
+  .question-cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
     /* align-items: start; */
   }
 }
-.card {
+.question-card {
   max-width: 15rem;
   color: #ffffffda;
   padding: 1.5rem;
@@ -52,10 +49,28 @@ body {
   flex-direction: column;
   border-radius: 10px;
 }
-.card-title {
+.tag {
   position: relative;
 }
-
+.question-cards .links {
+  display: flex;
+  flex-direction: column;
+}
+.question-card .links > a {
+  text-decoration: none !important;
+  color: aliceblue !important;
+  padding: 5px 0;
+}
+.question-card .links > a:hover {
+  color: #7dcfff !important;
+}
+.hints {
+  display: flex;
+  flex-direction: column;
+}
+.hints > p {
+  margin: 5px 0;
+}
 .date {
   color: #bb86fc;
   font-size: 0.85rem;
@@ -66,13 +81,23 @@ body {
   font-size: 0.9rem;
 }
 
-.cards:hover > .card:hover {
-  transform: scale(1.15);
-  color: #64ffda !important;
+.question-cards:hover > .question-card:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
   z-index: 1;
 }
-.cards:hover > .card:not(:hover) {
+.question-cards:hover > .question-card:not(:hover) {
   opacity: 0.5;
+}
+.buttons {
+  display: flex;
+  gap: 5px;
+  margin-top: 1rem;
+}
+.btn {
+  border: none;
+  border-radius: 1rem;
+  padding: 5px 10px;
+  color: #413c69;
+  background-color: #bb86fc;
+  
 }
