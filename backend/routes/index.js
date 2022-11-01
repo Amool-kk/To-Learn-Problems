@@ -1,6 +1,7 @@
 const { Router } = require('express')
 const tags = require('./tag')
 const questions = require('./questions')
+const auth = require("./auth")
 const routes = Router()
 
 routes.get('/', (req, res) => {
@@ -10,5 +11,6 @@ routes.get('/', (req, res) => {
 module.exports = {
     base: routes,
     tag: tags,
-    question: questions
+    question: questions,
+    auth: auth
 }
