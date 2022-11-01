@@ -21,6 +21,7 @@ html {
   place-content: center;
   font-family: JetBrains Mono;
   transition: all 0.3s linear;
+  word-break: break-word;
 }
 .question-cards {
   display: grid;

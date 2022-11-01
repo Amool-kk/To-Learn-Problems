@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const { authenticate } = require("../middlewares");
 const routes = Router();
-const { Question, Tag } = require("../models");
+const { Question } = require("../models");
 
 //get all questions
 routes.get("/", async (req, res) => {

@@ -5,6 +5,7 @@ h2 {
   font-weight: normal;
   padding-bottom: 20px;
 }
+
 form {
   min-width: 50%;
   display: flex;
@@ -42,9 +43,10 @@ form {
   border: none;
   color: white;
   display: flex;
-	align-items: flex-start;
-	flex-wrap: wrap;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
+
 .create select {
   width: 80%;
   padding: 20px;
@@ -54,6 +56,7 @@ form {
   border: none;
   color: white;
 }
+
 .create input:focus {
   background: #223f72;
   border: 2px solid #4299e1;
@@ -71,9 +74,48 @@ form {
   margin-right: auto;
 }
 
-.create .types-container{
-  display:flex;
+.create .types-container {
+  display: flex;
   flex-wrap: wrap;
-  
-  
+}
+
+#demoID3 {
+  margin: auto;
+  left: 25%;
+  height: 35.5%;
+}
+
+.sliderBody {
+  display: unset;
+}
+
+.sliderBody form {
+  min-width: 100%!important;
+  margin: 0px!important;
+  border-radius: 0px!important;
+}
+
+.sliderBody input {
+  width: 80%;
+  padding: 20px;
+  outline: none;
+  border-radius: 30px;
+  background-color: #223f72;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.sliderBody button {
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 10px;
+  background-color: transparent;
+  color: #64ffda;
+  border: 2px solid #64ffda;
+  font-size: 20px;
+  font-family: JetBrains Mono Regular;
+  margin-right: auto;
 }
