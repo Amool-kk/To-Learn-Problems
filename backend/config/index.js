@@ -10,7 +10,7 @@ const mailer = {
     pass: process.env.MAILER_PASS,
     name: process.env.MAILER_NAME
 }
-
+const secretKey = process.env.SECRET_KEY
 
 
 
@@ -22,4 +22,5 @@ module.exports = {
     MAILER_USER: mailer.user,
     MAILER_PASS: mailer.pass,
     MAILER_NAME: mailer.name,
+    SECRET_KEY: secretKey
 }
