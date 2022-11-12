@@ -6,6 +6,7 @@ import QuestionDetails from "../../components/QuestionDetails/QuestionDetails";
 
 const Problems = () => {
   const [data, setData] = useState([]);
+  const [login, setLogin] = useState(false);
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -21,6 +22,7 @@ const Problems = () => {
   return (
     <div className="problem-page">
       <div className="questions"></div>
+      {/* {login && <QuestionForm />} */}
       <QuestionForm />
       <QuestionDetails questions={[...data]} />
     </div>

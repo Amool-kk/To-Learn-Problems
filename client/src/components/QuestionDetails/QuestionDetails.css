@@ -25,14 +25,14 @@ html {
 .question-cards {
   display: grid;
   margin: 20px auto;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
   pointer-events: none;
 }
 @media screen and (min-width: 992px) {
   .question-cards {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4,1fr);
     /* align-items: start; */
   }
 }
@@ -48,9 +48,14 @@ html {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
+  
 }
 .tag {
   position: relative;
+}
+.question-card .title{
+  word-wrap:break-word;
+  
 }
 .question-cards .links {
   display: flex;
@@ -67,6 +72,8 @@ html {
 .hints {
   display: flex;
   flex-direction: column;
+  flex-wrap:wrap;
+  overflow-x:hidden;
 }
 .hints > p {
   margin: 5px 0;
@@ -90,6 +97,7 @@ html {
 }
 .buttons {
   display: flex;
+  flex-wrap: wrap;
   gap: 5px;
   margin-top: 1rem;
 }
